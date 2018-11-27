@@ -1,0 +1,55 @@
+-- @path RML=/at.ac.tuwien.big.roverml.atl/metamodels/roverml.ecore
+-- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
+-- @nsURI Profile=http://www.eclipse.org/uml2/5.0.0/UML
+
+
+module RoverML2UML;
+create OUT: UML from IN: RML, P: Profile;
+
+rule system2package {
+	from
+		system: RML!RoverSystem
+	to
+		package: UML!Package (
+			packagedElement <- system.rovers,
+			packagedElement <- system.roverPrograms
+		)
+	do {
+			-- Apply the rover profile to the targeted UML element
+			package.applyProfile(Profile!Profile.allInstances() -> first());
+		}
+}
+
+-- TODO: Complete this rule
+rule rover2package {
+	from
+		rover: RML!Rover
+	to
+		package: UML!Package
+}
+
+-- TODO: Complete this rule
+rule program2activity {
+	from
+		program: RML!RoverProgram
+	to
+		activity: UML!Activity (
+			ownedNode <- program.block
+		)
+}
+
+-- TODO: Complete this rule
+rule block2structuredActivityNode {
+	from
+		block: RML!Block
+	to
+		node: UML!StructuredActivityNode
+	do {
+		if (block.oclIsTypeOf(RML!Repeat)) {
+			-- Apply the stereotype to the targeted UML element
+			node.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Repeat'));
+			-- Set the property value of the applied stereotype
+			node.setValue(node.getAppliedStereotypes() -> first(), 'count', block.count);
+		}
+	}
+}

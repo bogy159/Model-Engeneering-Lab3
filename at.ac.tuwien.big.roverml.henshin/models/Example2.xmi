@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<at.ac.tuwien.big.roverml:RoverSystem
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:at.ac.tuwien.big.roverml="http://www.big.tuwien.ac.at/roverml"
+    xsi:schemaLocation="http://www.big.tuwien.ac.at/roverml ../metamodels/roverml.ecore">
+  <rovers/>
+  <roverPrograms>
+    <block>
+      <commands
+          xsi:type="at.ac.tuwien.big.roverml:Wait"
+          name="w1">
+        <duration
+            value="5.0"/>
+      </commands>
+      <commands
+          xsi:type="at.ac.tuwien.big.roverml:Wait"
+          name="w2">
+        <duration
+            value="8.0"/>
+      </commands>
+      <commands
+          xsi:type="at.ac.tuwien.big.roverml:Rotate"
+          name="r"/>
+      <transitions
+          source="//@roverPrograms.0/@block/@commands.0"
+          target="//@roverPrograms.0/@block/@commands.1"/>
+      <transitions
+          source="//@roverPrograms.0/@block/@commands.1"
+          target="//@roverPrograms.0/@block/@commands.2"/>
+    </block>
+  </roverPrograms>
+</at.ac.tuwien.big.roverml:RoverSystem>

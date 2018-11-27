@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RoverProfile="http:///schemas/RoverProfile/_nAehcO_yEeiHQpTw0BaGqw/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/RoverProfile/_nAehcO_yEeiHQpTw0BaGqw/0 ../profile/RoverProfile.uml#_nAfIgO_yEeiHQpTw0BaGqw">
+  <uml:Package xmi:id="_MQJWoPCvEei4mIPuN2E-Yw">
+    <packagedElement xmi:type="uml:Package" xmi:id="_MQJWofCvEei4mIPuN2E-Yw" name="Curiosity">
+      <packagedElement xmi:type="uml:Component" xmi:id="_MQJWovCvEei4mIPuN2E-Yw" name="digiPos"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MQJWo_CvEei4mIPuN2E-Yw" name="FrontSensor"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MQJWpPCvEei4mIPuN2E-Yw" name="digiComp"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MQJWpfCvEei4mIPuN2E-Yw" name="Light1"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MQJWpvCvEei4mIPuN2E-Yw" name="mainMotor"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_MQJWp_CvEei4mIPuN2E-Yw" name="Mars" node="_MQJWqPCvEei4mIPuN2E-Yw" group="_MQJWqPCvEei4mIPuN2E-Yw">
+        <node xmi:type="uml:StructuredActivityNode" xmi:id="_MQJWqPCvEei4mIPuN2E-Yw">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MQJWqfCvEei4mIPuN2E-Yw" target="_MQJWs_CvEei4mIPuN2E-Yw" source="_MQJWr_CvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MQJWqvCvEei4mIPuN2E-Yw" target="_MQJWsfCvEei4mIPuN2E-Yw" source="_MQJWr_CvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MQJWq_CvEei4mIPuN2E-Yw" target="_MQJWsPCvEei4mIPuN2E-Yw" source="_MQJWr_CvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MQJWrPCvEei4mIPuN2E-Yw" target="_MQJWs_CvEei4mIPuN2E-Yw" source="_MQJWsPCvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MQJWrfCvEei4mIPuN2E-Yw" target="_MQJWsvCvEei4mIPuN2E-Yw" source="_MQJWs_CvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MQJWrvCvEei4mIPuN2E-Yw" target="_MQJWsfCvEei4mIPuN2E-Yw" source="_MQJWsvCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MQJWr_CvEei4mIPuN2E-Yw" outgoing="_MQJWqfCvEei4mIPuN2E-Yw _MQJWqvCvEei4mIPuN2E-Yw _MQJWq_CvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MQJWsPCvEei4mIPuN2E-Yw" incoming="_MQJWq_CvEei4mIPuN2E-Yw" outgoing="_MQJWrPCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:ActivityFinalNode" xmi:id="_MQJWsfCvEei4mIPuN2E-Yw" incoming="_MQJWqvCvEei4mIPuN2E-Yw _MQJWrvCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MQJWsvCvEei4mIPuN2E-Yw" incoming="_MQJWrfCvEei4mIPuN2E-Yw" outgoing="_MQJWrvCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:StructuredActivityNode" xmi:id="_MQJWs_CvEei4mIPuN2E-Yw" incoming="_MQJWqfCvEei4mIPuN2E-Yw _MQJWrPCvEei4mIPuN2E-Yw" outgoing="_MQJWrfCvEei4mIPuN2E-Yw">
+            <edge xmi:type="uml:ControlFlow" xmi:id="_MQJWtPCvEei4mIPuN2E-Yw" target="_MQJWtfCvEei4mIPuN2E-Yw" source="_MQJWtvCvEei4mIPuN2E-Yw"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_MQJWtfCvEei4mIPuN2E-Yw" name="RedLight" incoming="_MQJWtPCvEei4mIPuN2E-Yw"/>
+            <node xmi:type="uml:OpaqueAction" xmi:id="_MQJWtvCvEei4mIPuN2E-Yw" name="BlueLight" outgoing="_MQJWtPCvEei4mIPuN2E-Yw"/>
+          </node>
+        </node>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_MQJWt_CvEei4mIPuN2E-Yw">
+      <eAnnotations xmi:id="_MQJWuPCvEei4mIPuN2E-Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../profile/RoverProfile.uml#_nAfIgO_yEeiHQpTw0BaGqw"/>
+      </eAnnotations>
+      <appliedProfile href="../profile/RoverProfile.uml#_2WhFsN6LEeim_-7Nvywluw"/>
+    </profileApplication>
+  </uml:Package>
+  <RoverProfile:Sensor xmi:id="_MQJWufCvEei4mIPuN2E-Yw" base_Component="_MQJWovCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Sensor xmi:id="_MQJWuvCvEei4mIPuN2E-Yw" base_Component="_MQJWo_CvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Sensor xmi:id="_MQJWu_CvEei4mIPuN2E-Yw" base_Component="_MQJWpPCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Actuator xmi:id="_MQJWvPCvEei4mIPuN2E-Yw" base_Component="_MQJWpfCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Actuator xmi:id="_MQJWvfCvEei4mIPuN2E-Yw" base_Component="_MQJWpvCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Repeat xmi:id="_MQJWvvCvEei4mIPuN2E-Yw" base_ActivityNode="_MQJWs_CvEei4mIPuN2E-Yw" count="5"/>
+  <RoverProfile:TriggeredTransition xmi:id="_MQJWv_CvEei4mIPuN2E-Yw" base_ControlFlow="_MQJWtPCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MQJWwPCvEei4mIPuN2E-Yw" base_ControlFlow="_MQJWqfCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:TriggeredTransition xmi:id="_MQJWwfCvEei4mIPuN2E-Yw" base_ControlFlow="_MQJWqvCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:TriggeredTransition xmi:id="_MQJWwvCvEei4mIPuN2E-Yw" base_ControlFlow="_MQJWq_CvEei4mIPuN2E-Yw"/>
+  <RoverProfile:TriggeredTransition xmi:id="_MQJWw_CvEei4mIPuN2E-Yw" base_ControlFlow="_MQJWrPCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MQJWxPCvEei4mIPuN2E-Yw" base_ControlFlow="_MQJWrfCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MQJWxfCvEei4mIPuN2E-Yw" base_ControlFlow="_MQJWrvCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Rotate xmi:id="_MQJWxvCvEei4mIPuN2E-Yw" base_ActivityNode="_MQJWsvCvEei4mIPuN2E-Yw" angle="60.0"/>
+  <RoverProfile:Move xmi:id="_MQJWx_CvEei4mIPuN2E-Yw" base_ActivityNode="_MQJWr_CvEei4mIPuN2E-Yw" distance="20.0" speed="5.0"/>
+  <RoverProfile:Wait xmi:id="_MQJWyPCvEei4mIPuN2E-Yw" base_ActivityNode="_MQJWsPCvEei4mIPuN2E-Yw" duration="10.0"/>
+  <RoverProfile:SetLightColor xmi:id="_MQJWyfCvEei4mIPuN2E-Yw" base_ActivityNode="_MQJWtfCvEei4mIPuN2E-Yw" color="red" lights="Sequence {IN!Light1}"/>
+  <RoverProfile:SetLightColor xmi:id="_MQJWyvCvEei4mIPuN2E-Yw" base_ActivityNode="_MQJWtvCvEei4mIPuN2E-Yw" color="blue" lights="Sequence {IN!Light1}"/>
+  <RoverProfile:Terminate xmi:id="_MQJWy_CvEei4mIPuN2E-Yw" base_ActivityNode="_MQJWsfCvEei4mIPuN2E-Yw"/>
+</xmi:XMI>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_2WhFsN6LEeim_-7Nvywluw" name="RoverProfile" metaclassReference="_H8OYIN6MEeim_-7Nvywluw _n4Y6gO_qEeiHQpTw0BaGqw _xnx7gO_rEeiHQpTw0BaGqw">
+  <eAnnotations xmi:id="_LF6F4N6MEeim_-7Nvywluw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_nAfIgO_yEeiHQpTw0BaGqw" name="RoverProfile" nsURI="http:///schemas/RoverProfile/_nAehcO_yEeiHQpTw0BaGqw/0" nsPrefix="RoverProfile">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIge_yEeiHQpTw0BaGqw" name="RoverComponent" abstract="true">
+        <eAnnotations xmi:id="_nAfIgu_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_oKKA8O_fEeiHQpTw0BaGqw"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_nAfIg-_yEeiHQpTw0BaGqw" name="base_Component" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Component"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIhe_yEeiHQpTw0BaGqw" name="Actuator" eSuperTypes="_nAfIge_yEeiHQpTw0BaGqw">
+        <eAnnotations xmi:id="_nAfIhu_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_sNMYkO_fEeiHQpTw0BaGqw"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIiO_yEeiHQpTw0BaGqw" name="Sensor" eSuperTypes="_nAfIge_yEeiHQpTw0BaGqw">
+        <eAnnotations xmi:id="_nAfIie_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_77PT4O_hEeiHQpTw0BaGqw"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIi-_yEeiHQpTw0BaGqw" name="Command" abstract="true">
+        <eAnnotations xmi:id="_nAfIjO_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_JhWkcO2WEei4U8V0OaCduQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_nAfIje_yEeiHQpTw0BaGqw" name="base_ActivityNode" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIj-_yEeiHQpTw0BaGqw" name="Rotate" eSuperTypes="_nAfIi-_yEeiHQpTw0BaGqw">
+        <eAnnotations xmi:id="_nAfIkO_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Njmp8O47Eeim7MqFF_t6VA"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_nAfIke_yEeiHQpTw0BaGqw" name="angle" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIlO_yEeiHQpTw0BaGqw" name="Move" eSuperTypes="_nAfIi-_yEeiHQpTw0BaGqw">
+        <eAnnotations xmi:id="_nAfIle_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_2CsLQO5kEeim7MqFF_t6VA"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_nAfIlu_yEeiHQpTw0BaGqw" name="distance" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_nAfImO_yEeiHQpTw0BaGqw" name="speed" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIm-_yEeiHQpTw0BaGqw" name="Wait" eSuperTypes="_nAfIi-_yEeiHQpTw0BaGqw">
+        <eAnnotations xmi:id="_nAfInO_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VJ1CYO5lEeim7MqFF_t6VA"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_nAfIne_yEeiHQpTw0BaGqw" name="duration" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIoO_yEeiHQpTw0BaGqw" name="SetLightColor" eSuperTypes="_nAfIi-_yEeiHQpTw0BaGqw">
+        <eAnnotations xmi:id="_nAfIoe_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_puSgwO5sEeim7MqFF_t6VA"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_nAfIou_yEeiHQpTw0BaGqw" name="color" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_nAfIpO_yEeiHQpTw0BaGqw" name="lights" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIp-_yEeiHQpTw0BaGqw" name="Terminate" eSuperTypes="_nAfIi-_yEeiHQpTw0BaGqw">
+        <eAnnotations xmi:id="_nAfIqO_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_kle3EO5wEeim7MqFF_t6VA"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIqu_yEeiHQpTw0BaGqw" name="Transition">
+        <eAnnotations xmi:id="_nAfIq-_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_qFywwO_rEeiHQpTw0BaGqw"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_nAfIrO_yEeiHQpTw0BaGqw" name="base_ControlFlow" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//ControlFlow"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIru_yEeiHQpTw0BaGqw" name="TriggeredTransition" eSuperTypes="_nAfIqu_yEeiHQpTw0BaGqw">
+        <eAnnotations xmi:id="_nAfIr-_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_1nX9kO_rEeiHQpTw0BaGqw"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nAfIse_yEeiHQpTw0BaGqw" name="Repeat">
+        <eAnnotations xmi:id="_nAfIsu_yEeiHQpTw0BaGqw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_TKAGQO_yEeiHQpTw0BaGqw"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_nAfIs-_yEeiHQpTw0BaGqw" name="base_ActivityNode" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//ActivityNode"/>
+        </eStructuralFeatures>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_nAfIte_yEeiHQpTw0BaGqw" name="count" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:id="_H8OYIN6MEeim_-7Nvywluw">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Component"/>
+  </elementImport>
+  <elementImport xmi:id="_n4Y6gO_qEeiHQpTw0BaGqw">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#ActivityNode"/>
+  </elementImport>
+  <elementImport xmi:id="_xnx7gO_rEeiHQpTw0BaGqw">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#ControlFlow"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_oKKA8O_fEeiHQpTw0BaGqw" name="RoverComponent" isAbstract="true">
+    <ownedAttribute xmi:id="_qEpXsO_fEeiHQpTw0BaGqw" name="base_Component" association="_qEowoO_fEeiHQpTw0BaGqw">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Component"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_sNMYkO_fEeiHQpTw0BaGqw" name="Actuator">
+    <generalization xmi:id="_2SwBYO_hEeiHQpTw0BaGqw" general="_oKKA8O_fEeiHQpTw0BaGqw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_77PT4O_hEeiHQpTw0BaGqw" name="Sensor">
+    <generalization xmi:id="_8sP6EO_hEeiHQpTw0BaGqw" general="_oKKA8O_fEeiHQpTw0BaGqw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_qEowoO_fEeiHQpTw0BaGqw" name="Component_RoverComponent" memberEnd="_qEowoe_fEeiHQpTw0BaGqw _qEpXsO_fEeiHQpTw0BaGqw">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_qEowoe_fEeiHQpTw0BaGqw" name="extension_RoverComponent" type="_oKKA8O_fEeiHQpTw0BaGqw" aggregation="composite" association="_qEowoO_fEeiHQpTw0BaGqw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_JhWkcO2WEei4U8V0OaCduQ" name="Command" isAbstract="true">
+    <ownedAttribute xmi:id="_pHdVsu_qEeiHQpTw0BaGqw" name="base_ActivityNode" association="_pHdVsO_qEeiHQpTw0BaGqw">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#ActivityNode"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_Njmp8O47Eeim7MqFF_t6VA" name="Rotate">
+    <generalization xmi:id="_SvqsEO5wEeim7MqFF_t6VA" general="_JhWkcO2WEei4U8V0OaCduQ"/>
+    <ownedAttribute xmi:id="_TIenwO47Eeim7MqFF_t6VA" name="angle">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EFloat"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_2CsLQO5kEeim7MqFF_t6VA" name="Move">
+    <generalization xmi:id="_SgY58O5wEeim7MqFF_t6VA" general="_JhWkcO2WEei4U8V0OaCduQ"/>
+    <ownedAttribute xmi:id="_-1vVQO5kEeim7MqFF_t6VA" name="distance">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EFloat"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_FauFMO5lEeim7MqFF_t6VA" name="speed">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EFloat"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_VJ1CYO5lEeim7MqFF_t6VA" name="Wait">
+    <generalization xmi:id="_SI5nAO5wEeim7MqFF_t6VA" general="_JhWkcO2WEei4U8V0OaCduQ"/>
+    <ownedAttribute xmi:id="_Zmy88O5lEeim7MqFF_t6VA" name="duration">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EFloat"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_puSgwO5sEeim7MqFF_t6VA" name="SetLightColor">
+    <generalization xmi:id="_1teIMO5vEeim7MqFF_t6VA" general="_JhWkcO2WEei4U8V0OaCduQ"/>
+    <ownedAttribute xmi:id="_xgNk8O5sEeim7MqFF_t6VA" name="color">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_7UdtQO5sEeim7MqFF_t6VA" name="lights">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_kle3EO5wEeim7MqFF_t6VA" name="Terminate">
+    <generalization xmi:id="_kle3Ee5wEeim7MqFF_t6VA" general="_JhWkcO2WEei4U8V0OaCduQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_pHdVsO_qEeiHQpTw0BaGqw" name="ActivityNode_Command" memberEnd="_pHdVse_qEeiHQpTw0BaGqw _pHdVsu_qEeiHQpTw0BaGqw">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_pHdVse_qEeiHQpTw0BaGqw" name="extension_Command" type="_JhWkcO2WEei4U8V0OaCduQ" aggregation="composite" association="_pHdVsO_qEeiHQpTw0BaGqw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_qFywwO_rEeiHQpTw0BaGqw" name="Transition">
+    <ownedAttribute xmi:id="_zumeEu_rEeiHQpTw0BaGqw" name="base_ControlFlow" association="_zumeEO_rEeiHQpTw0BaGqw">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#ControlFlow"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_1nX9kO_rEeiHQpTw0BaGqw" name="TriggeredTransition">
+    <generalization xmi:id="_9uSaUO_rEeiHQpTw0BaGqw" general="_qFywwO_rEeiHQpTw0BaGqw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_zumeEO_rEeiHQpTw0BaGqw" name="ControlFlow_Transition" memberEnd="_zumeEe_rEeiHQpTw0BaGqw _zumeEu_rEeiHQpTw0BaGqw">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_zumeEe_rEeiHQpTw0BaGqw" name="extension_Transition" type="_qFywwO_rEeiHQpTw0BaGqw" aggregation="composite" association="_zumeEO_rEeiHQpTw0BaGqw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_TKAGQO_yEeiHQpTw0BaGqw" name="Repeat">
+    <ownedAttribute xmi:id="_gAxkYO_yEeiHQpTw0BaGqw" name="base_ActivityNode" association="_gAw9UO_yEeiHQpTw0BaGqw">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#ActivityNode"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_hWPigO_yEeiHQpTw0BaGqw" name="count">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_gAw9UO_yEeiHQpTw0BaGqw" name="ActivityNode_Repeat" memberEnd="_gAw9Ue_yEeiHQpTw0BaGqw _gAxkYO_yEeiHQpTw0BaGqw">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_gAw9Ue_yEeiHQpTw0BaGqw" name="extension_Repeat" type="_TKAGQO_yEeiHQpTw0BaGqw" aggregation="composite" association="_gAw9UO_yEeiHQpTw0BaGqw"/>
+  </packagedElement>
+</uml:Profile>

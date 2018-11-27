@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RoverProfile="http:///schemas/RoverProfile/_nAehcO_yEeiHQpTw0BaGqw/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/RoverProfile/_nAehcO_yEeiHQpTw0BaGqw/0 ../profile/RoverProfile.uml#_nAfIgO_yEeiHQpTw0BaGqw">
+  <uml:Package xmi:id="_MoPtkPCvEei4mIPuN2E-Yw">
+    <packagedElement xmi:type="uml:Package" xmi:id="_MoPtkfCvEei4mIPuN2E-Yw" name="polarSysRover">
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtkvCvEei4mIPuN2E-Yw" name="digitalCompass"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtk_CvEei4mIPuN2E-Yw" name="frontSensor"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtlPCvEei4mIPuN2E-Yw" name="backSensor"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtlfCvEei4mIPuN2E-Yw" name="leftSensor"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtlvCvEei4mIPuN2E-Yw" name="rightSensor"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtl_CvEei4mIPuN2E-Yw" name="gpsSensor"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtmPCvEei4mIPuN2E-Yw" name="frontLight"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtmfCvEei4mIPuN2E-Yw" name="backLight"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtmvCvEei4mIPuN2E-Yw" name="leftMotor"/>
+      <packagedElement xmi:type="uml:Component" xmi:id="_MoPtm_CvEei4mIPuN2E-Yw" name="rightMotor"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_MoPtnPCvEei4mIPuN2E-Yw" name="travelBetweenObstacles" node="_MoPtnfCvEei4mIPuN2E-Yw" group="_MoPtnfCvEei4mIPuN2E-Yw">
+        <node xmi:type="uml:StructuredActivityNode" xmi:id="_MoPtnfCvEei4mIPuN2E-Yw">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MoPtnvCvEei4mIPuN2E-Yw" target="_MoPtpPCvEei4mIPuN2E-Yw" source="_MoPto_CvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MoPtn_CvEei4mIPuN2E-Yw" target="_MoPtpPCvEei4mIPuN2E-Yw" source="_MoPtpPCvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MoPtoPCvEei4mIPuN2E-Yw" target="_MoPtpfCvEei4mIPuN2E-Yw" source="_MoPtpPCvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MoPtofCvEei4mIPuN2E-Yw" target="_MoPtpvCvEei4mIPuN2E-Yw" source="_MoPtpfCvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MoPtovCvEei4mIPuN2E-Yw" target="_MoPto_CvEei4mIPuN2E-Yw" source="_MoPtpvCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MoPto_CvEei4mIPuN2E-Yw" name="setBackLightColorGreen" incoming="_MoPtovCvEei4mIPuN2E-Yw" outgoing="_MoPtnvCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MoPtpPCvEei4mIPuN2E-Yw" name="moveForward" incoming="_MoPtnvCvEei4mIPuN2E-Yw _MoPtn_CvEei4mIPuN2E-Yw" outgoing="_MoPtn_CvEei4mIPuN2E-Yw _MoPtoPCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MoPtpfCvEei4mIPuN2E-Yw" name="setBackLightColorRed" incoming="_MoPtoPCvEei4mIPuN2E-Yw" outgoing="_MoPtofCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MoPtpvCvEei4mIPuN2E-Yw" name="turnAround" incoming="_MoPtofCvEei4mIPuN2E-Yw" outgoing="_MoPtovCvEei4mIPuN2E-Yw"/>
+        </node>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_MoPtp_CvEei4mIPuN2E-Yw" name="testFrontLight" node="_MoPtqPCvEei4mIPuN2E-Yw" group="_MoPtqPCvEei4mIPuN2E-Yw">
+        <node xmi:type="uml:StructuredActivityNode" xmi:id="_MoPtqPCvEei4mIPuN2E-Yw">
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MoPtqfCvEei4mIPuN2E-Yw" target="_MoPtrvCvEei4mIPuN2E-Yw" source="_MoPtrfCvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MoPtqvCvEei4mIPuN2E-Yw" target="_MoPtr_CvEei4mIPuN2E-Yw" source="_MoPtrvCvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MoPtq_CvEei4mIPuN2E-Yw" target="_MoPtsPCvEei4mIPuN2E-Yw" source="_MoPtr_CvEei4mIPuN2E-Yw"/>
+          <edge xmi:type="uml:ControlFlow" xmi:id="_MoPtrPCvEei4mIPuN2E-Yw" target="_MoPtsfCvEei4mIPuN2E-Yw" source="_MoPtsPCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MoPtrfCvEei4mIPuN2E-Yw" name="setFrontLightColorGreen" outgoing="_MoPtqfCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MoPtrvCvEei4mIPuN2E-Yw" name="setFrontLightColorBlue" incoming="_MoPtqfCvEei4mIPuN2E-Yw" outgoing="_MoPtqvCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MoPtr_CvEei4mIPuN2E-Yw" name="setFrontLightColorRed" incoming="_MoPtqvCvEei4mIPuN2E-Yw" outgoing="_MoPtq_CvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MoPtsPCvEei4mIPuN2E-Yw" name="setFrontLightColorYellow" incoming="_MoPtq_CvEei4mIPuN2E-Yw" outgoing="_MoPtrPCvEei4mIPuN2E-Yw"/>
+          <node xmi:type="uml:OpaqueAction" xmi:id="_MoPtsfCvEei4mIPuN2E-Yw" name="turnOffFrontLight" incoming="_MoPtrPCvEei4mIPuN2E-Yw"/>
+        </node>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_MoPtsvCvEei4mIPuN2E-Yw">
+      <eAnnotations xmi:id="_MoPts_CvEei4mIPuN2E-Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../profile/RoverProfile.uml#_nAfIgO_yEeiHQpTw0BaGqw"/>
+      </eAnnotations>
+      <appliedProfile href="../profile/RoverProfile.uml#_2WhFsN6LEeim_-7Nvywluw"/>
+    </profileApplication>
+  </uml:Package>
+  <RoverProfile:Sensor xmi:id="_MoQUoPCvEei4mIPuN2E-Yw" base_Component="_MoPtkvCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Sensor xmi:id="_MoQUofCvEei4mIPuN2E-Yw" base_Component="_MoPtk_CvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Sensor xmi:id="_MoQUovCvEei4mIPuN2E-Yw" base_Component="_MoPtlPCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Sensor xmi:id="_MoQUo_CvEei4mIPuN2E-Yw" base_Component="_MoPtlfCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Sensor xmi:id="_MoQUpPCvEei4mIPuN2E-Yw" base_Component="_MoPtlvCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Sensor xmi:id="_MoQUpfCvEei4mIPuN2E-Yw" base_Component="_MoPtl_CvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Actuator xmi:id="_MoQUpvCvEei4mIPuN2E-Yw" base_Component="_MoPtmPCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Actuator xmi:id="_MoQUp_CvEei4mIPuN2E-Yw" base_Component="_MoPtmfCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Actuator xmi:id="_MoQUqPCvEei4mIPuN2E-Yw" base_Component="_MoPtmvCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Actuator xmi:id="_MoQUqfCvEei4mIPuN2E-Yw" base_Component="_MoPtm_CvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MoQUqvCvEei4mIPuN2E-Yw" base_ControlFlow="_MoPtnvCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:TriggeredTransition xmi:id="_MoQUq_CvEei4mIPuN2E-Yw" base_ControlFlow="_MoPtn_CvEei4mIPuN2E-Yw"/>
+  <RoverProfile:TriggeredTransition xmi:id="_MoQUrPCvEei4mIPuN2E-Yw" base_ControlFlow="_MoPtoPCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MoQUrfCvEei4mIPuN2E-Yw" base_ControlFlow="_MoPtofCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MoQUrvCvEei4mIPuN2E-Yw" base_ControlFlow="_MoPtovCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MoQUr_CvEei4mIPuN2E-Yw" base_ControlFlow="_MoPtqfCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MoQUsPCvEei4mIPuN2E-Yw" base_ControlFlow="_MoPtqvCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MoQUsfCvEei4mIPuN2E-Yw" base_ControlFlow="_MoPtq_CvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Transition xmi:id="_MoQUsvCvEei4mIPuN2E-Yw" base_ControlFlow="_MoPtrPCvEei4mIPuN2E-Yw"/>
+  <RoverProfile:Rotate xmi:id="_MoQUs_CvEei4mIPuN2E-Yw" base_ActivityNode="_MoPtpvCvEei4mIPuN2E-Yw" angle="180.0"/>
+  <RoverProfile:Move xmi:id="_MoQUtPCvEei4mIPuN2E-Yw" base_ActivityNode="_MoPtpPCvEei4mIPuN2E-Yw" distance="3.0" speed="30.0"/>
+  <RoverProfile:SetLightColor xmi:id="_MoQUtfCvEei4mIPuN2E-Yw" base_ActivityNode="_MoPto_CvEei4mIPuN2E-Yw" color="green" lights="Sequence {IN!backLight}"/>
+  <RoverProfile:SetLightColor xmi:id="_MoQUtvCvEei4mIPuN2E-Yw" base_ActivityNode="_MoPtpfCvEei4mIPuN2E-Yw" color="red" lights="Sequence {IN!backLight}"/>
+  <RoverProfile:SetLightColor xmi:id="_MoQUt_CvEei4mIPuN2E-Yw" base_ActivityNode="_MoPtrfCvEei4mIPuN2E-Yw" color="green" lights="Sequence {IN!frontLight}"/>
+  <RoverProfile:SetLightColor xmi:id="_MoQUuPCvEei4mIPuN2E-Yw" base_ActivityNode="_MoPtrvCvEei4mIPuN2E-Yw" color="blue" lights="Sequence {IN!frontLight}"/>
+  <RoverProfile:SetLightColor xmi:id="_MoQUufCvEei4mIPuN2E-Yw" base_ActivityNode="_MoPtr_CvEei4mIPuN2E-Yw" color="red" lights="Sequence {IN!frontLight}"/>
+  <RoverProfile:SetLightColor xmi:id="_MoQUuvCvEei4mIPuN2E-Yw" base_ActivityNode="_MoPtsPCvEei4mIPuN2E-Yw" color="yellow" lights="Sequence {IN!frontLight}"/>
+  <RoverProfile:SetLightColor xmi:id="_MoQUu_CvEei4mIPuN2E-Yw" base_ActivityNode="_MoPtsfCvEei4mIPuN2E-Yw" color="none" lights="Sequence {IN!frontLight}"/>
+</xmi:XMI>
