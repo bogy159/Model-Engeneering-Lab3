@@ -25,7 +25,10 @@ rule rover2package {
 	from
 		rover: RML!Rover
 	to
-		package: UML!Package
+		package: UML!Package (
+			name <- rover.name,
+			packagedElement <- rover.components			
+		)
 }
 
 -- TODO: Complete this rule
@@ -34,7 +37,20 @@ rule program2activity {
 		program: RML!RoverProgram
 	to
 		activity: UML!Activity (
-			ownedNode <- program.block
+			name <- program.name,
+			ownedNode <- program.block,
+			ownedElement <- program.rover,
+			group <- program.block
+		)
+}
+
+rule comp2component {
+	from 
+		comp: RML!Component
+	to
+		component: UML!Component (
+			name <- comp.name
+			-- TODO stereotypes by helper func
 		)
 }
 
@@ -51,5 +67,16 @@ rule block2structuredActivityNode {
 			-- Set the property value of the applied stereotype
 			node.setValue(node.getAppliedStereotypes() -> first(), 'count', block.count);
 		}
+	}
+}
+
+rule genAttribute(name: String, value: String) {
+	to
+		att: AML!Attribute (
+			name <- name,
+			value <- value
+		)
+	do {
+		att; 
 	}
 }
