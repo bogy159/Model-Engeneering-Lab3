@@ -50,8 +50,11 @@ rule comp2component {
 	to
 		component: UML!Component (
 			name <- comp.name
-			-- TODO stereotypes by helper func
 		)
+	do {
+		component.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Actuator'));
+		component.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Sensor'));
+	}
 }
 
 -- TODO: Complete this rule
@@ -59,7 +62,9 @@ rule block2structuredActivityNode {
 	from
 		block: RML!Block
 	to
-		node: UML!StructuredActivityNode
+		node: UML!StructuredActivityNode (
+			-- TODO nodes -> commands and edges -> transitions
+		)
 	do {
 		if (block.oclIsTypeOf(RML!Repeat)) {
 			-- Apply the stereotype to the targeted UML element
@@ -68,6 +73,31 @@ rule block2structuredActivityNode {
 			node.setValue(node.getAppliedStereotypes() -> first(), 'count', block.count);
 		}
 	}
+}
+
+rule transition2controlFlow {
+	from
+		trans: RML!Transition
+	to
+		controlFlow: UML!ControlFlow (
+				name <- trans.name,
+				source <- trans.source,
+				target <- trans.target
+		)
+	do {
+		controlFlow.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Transition'));
+		controlFlow.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'TriggeredTransition'));
+	}
+}
+
+rule command2opaqueAction {
+	from
+		com: RML!Command
+	to
+		action: UML!OpaqueAction (
+			name <- com.name
+			
+		)
 }
 
 rule genAttribute(name: String, value: String) {
