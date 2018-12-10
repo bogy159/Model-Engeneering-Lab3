@@ -63,6 +63,7 @@ rule block2structuredActivityNode {
 		block: RML!Block
 	to
 		node: UML!StructuredActivityNode (
+			node <- RML!Command
 			-- TODO nodes -> commands and edges -> transitions
 		)
 	do {
@@ -95,9 +96,37 @@ rule command2opaqueAction {
 		com: RML!Command
 	to
 		action: UML!OpaqueAction (
-			name <- com.name
+			name <- com.name	
 			
 		)
+		do {
+			if (com.oclIsTypeOf(RML!Wait)) {
+				
+				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Wait'));
+				action.setValue(action.getApplicableStereotypes() -> first(), 'duration', com.duration);			
+			}
+			if (com.oclIsTypeOf(RML!Move)) {
+				
+				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Move'));
+				action.setValue(action.getApplicableStereotypes() -> first(), 'speed', com.speed);	
+				action.setValue(action.getApplicableStereotypes() -> first(), 'distance', com.distance);
+			}
+			if (com.oclIsTypeOf(RML!SetLightColor)) {
+				
+				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'SetLightColor'));
+				action.setValue(action.getApplicableStereotypes() -> first(), 'color', com.color);			
+			}
+			if (com.oclIsTypeOf(RML!Rotate)) {
+				
+				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Rotate'));
+				action.setValue(action.getApplicableStereotypes() -> first(), 'angle', com.angle);			
+			}
+			if (com.oclIsTypeOf(RML!Repeat)) {
+				
+				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Repeat'));
+				action.setValue(action.getApplicableStereotypes() -> first(), 'count', com.count);			
+			}
+	}
 }
 
 rule genAttribute(name: String, value: String) {
