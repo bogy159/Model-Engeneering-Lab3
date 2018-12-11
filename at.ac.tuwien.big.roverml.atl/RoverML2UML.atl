@@ -6,6 +6,8 @@
 module RoverML2UML;
 create OUT: UML from IN: RML, P: Profile;
 
+helper def: getStereotype(name: String): UML!Profile = Profile!Stereotype.allInstances() -> any(x | x.name = name);
+
 rule system2package {
 	from
 		system: RML!RoverSystem
@@ -52,8 +54,8 @@ rule comp2component {
 			name <- comp.name
 		)
 	do {
-		component.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Actuator'));
-		component.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Sensor'));
+		component.applyStereotype(thisModule.getStereotype('Actuator'));
+		component.applyStereotype(thisModule.getStereotype('Sensor'));
 	}
 }
 
@@ -63,15 +65,16 @@ rule block2structuredActivityNode {
 		block: RML!Block
 	to
 		node: UML!StructuredActivityNode (
-			node <- RML!Command
+			
 			-- TODO nodes -> commands and edges -> transitions
+			node <- RML!Command
 		)
 	do {
 		if (block.oclIsTypeOf(RML!Repeat)) {
 			-- Apply the stereotype to the targeted UML element
-			node.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Repeat'));
+			node.applyStereotype(thisModule.getStereotype('Repeat'));
 			-- Set the property value of the applied stereotype
-			node.setValue(node.getAppliedStereotypes() -> first(), 'count', block.count);
+			node.setValue(thisModule.getStereotype('Repeat'), 'count', block.count);
 		}
 	}
 }
@@ -86,8 +89,8 @@ rule transition2controlFlow {
 				target <- trans.target
 		)
 	do {
-		controlFlow.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Transition'));
-		controlFlow.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'TriggeredTransition'));
+		controlFlow.applyStereotype(thisModule.getStereotype('Transition'));
+		controlFlow.applyStereotype(thisModule.getStereotype('TriggeredTransition'));
 	}
 }
 
@@ -102,30 +105,41 @@ rule command2opaqueAction {
 		do {
 			if (com.oclIsTypeOf(RML!Wait)) {
 				
-				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Wait'));
-				action.setValue(action.getApplicableStereotypes() -> first(), 'duration', com.duration);			
+				action.applyStereotype(thisModule.getStereotype('Wait'));
+				action.setValue(thisModule.getStereotype('Wait'), 'duration', com.duration.value);			
 			}
 			if (com.oclIsTypeOf(RML!Move)) {
 				
-				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Move'));
-				action.setValue(action.getApplicableStereotypes() -> first(), 'speed', com.speed);	
-				action.setValue(action.getApplicableStereotypes() -> first(), 'distance', com.distance);
+				action.applyStereotype(thisModule.getStereotype('Move'));
+				action.setValue(thisModule.getStereotype('Move'), 'speed', com.speed);	
+				action.setValue(thisModule.getStereotype('Move'), 'distance', com.distance);
 			}
 			if (com.oclIsTypeOf(RML!SetLightColor)) {
 				
-				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'SetLightColor'));
-				action.setValue(action.getApplicableStereotypes() -> first(), 'color', com.color);			
+				action.applyStereotype(thisModule.getStereotype('SetLightColor'));
+				action.setValue(thisModule.getStereotype('SetLightColor'), 'color', com.color);			
 			}
 			if (com.oclIsTypeOf(RML!Rotate)) {
 				
-				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Rotate'));
-				action.setValue(action.getApplicableStereotypes() -> first(), 'angle', com.angle);			
+				action.applyStereotype(thisModule.getStereotype('Rotate'));
+				action.setValue(thisModule.getStereotype('Rotate'), 'angle', com.angle);			
 			}
 			if (com.oclIsTypeOf(RML!Repeat)) {
 				
-				action.applyStereotype(Profile!Stereotype.allInstances() -> any(s | s.name = 'Repeat'));
-				action.setValue(action.getApplicableStereotypes() -> first(), 'count', com.count);			
+				action.applyStereotype(thisModule.getStereotype('Repeat'));
+				action.setValue(thisModule.getStereotype('Repeat'), 'count', com.count);			
 			}
+	}
+}
+
+rule terminate2node extends command2opaqueAction {
+	from
+		term: RML!Terminate
+	to
+		node: UML!ActivityFinalNode
+	do {
+		
+		node.applyStereotype(thisModule.getStereotype('Terminate'));
 	}
 }
 
