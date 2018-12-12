@@ -54,8 +54,12 @@ rule comp2component {
 			name <- comp.name
 		)
 	do {
-		component.applyStereotype(thisModule.getStereotype('Actuator'));
-		component.applyStereotype(thisModule.getStereotype('Sensor'));
+		if (comp.oclIsKindOf(RML!Actuator)) {
+			component.applyStereotype(thisModule.getStereotype('Actuator'));
+		}
+		if (comp.oclIsKindOf(RML!Sensor)) {
+			component.applyStereotype(thisModule.getStereotype('Sensor'));
+		}
 	}
 }
 
@@ -90,14 +94,18 @@ rule transition2controlFlow {
 				target <- trans.target
 		)
 	do {
-		controlFlow.applyStereotype(thisModule.getStereotype('Transition'));
-		controlFlow.applyStereotype(thisModule.getStereotype('TriggeredTransition'));
+		if (trans.oclIsTypeOf(RML!Transition)) {
+			controlFlow.applyStereotype(thisModule.getStereotype('Transition'));
+		}
+		if (trans.oclIsKindOf(RML!TriggeredTransition)) {
+			controlFlow.applyStereotype(thisModule.getStereotype('TriggeredTransition'));
+		}
 	}
 }
 
 rule command2opaqueAction {
 	from
-		com: RML!Command(not com.oclIsTypeOf(RML!Repeat))
+		com: RML!Command(not com.oclIsTypeOf(RML!Repeat) and not com.oclIsTypeOf(RML!Terminate))
 	to
 		action: UML!OpaqueAction (
 			name <- com.name	
