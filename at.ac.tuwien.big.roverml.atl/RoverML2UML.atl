@@ -41,7 +41,7 @@ rule program2activity {
 		activity: UML!Activity (
 			name <- program.name,
 			ownedNode <- program.block,
-			ownedElement <- program.rover,
+			package <- program.rover,
 			group <- program.block
 		)
 }
@@ -67,7 +67,8 @@ rule block2structuredActivityNode {
 		node: UML!StructuredActivityNode (
 			
 			-- TODO nodes -> commands and edges -> transitions
-			node <- RML!Command
+			node <- block.commands,
+			edge <- block.transitions
 		)
 	do {
 		if (block.oclIsTypeOf(RML!Repeat)) {
@@ -96,7 +97,7 @@ rule transition2controlFlow {
 
 rule command2opaqueAction {
 	from
-		com: RML!Command
+		com: RML!Command(not com.oclIsTypeOf(RML!Repeat))
 	to
 		action: UML!OpaqueAction (
 			name <- com.name	
@@ -111,28 +112,24 @@ rule command2opaqueAction {
 			if (com.oclIsTypeOf(RML!Move)) {
 				
 				action.applyStereotype(thisModule.getStereotype('Move'));
-				action.setValue(thisModule.getStereotype('Move'), 'speed', com.speed);	
-				action.setValue(thisModule.getStereotype('Move'), 'distance', com.distance);
+				action.setValue(thisModule.getStereotype('Move'), 'speed', com.speed.value);	
+				action.setValue(thisModule.getStereotype('Move'), 'distance', com.distance.value);
 			}
 			if (com.oclIsTypeOf(RML!SetLightColor)) {
 				
 				action.applyStereotype(thisModule.getStereotype('SetLightColor'));
-				action.setValue(thisModule.getStereotype('SetLightColor'), 'color', com.color);			
+				action.setValue(thisModule.getStereotype('SetLightColor'), 'color', com.color.toString());			
 			}
 			if (com.oclIsTypeOf(RML!Rotate)) {
 				
 				action.applyStereotype(thisModule.getStereotype('Rotate'));
-				action.setValue(thisModule.getStereotype('Rotate'), 'angle', com.angle);			
+				action.setValue(thisModule.getStereotype('Rotate'), 'angle', com.angle.value);			
 			}
-			if (com.oclIsTypeOf(RML!Repeat)) {
-				
-				action.applyStereotype(thisModule.getStereotype('Repeat'));
-				action.setValue(thisModule.getStereotype('Repeat'), 'count', com.count);			
-			}
+			
 	}
 }
 
-rule terminate2node extends command2opaqueAction {
+rule terminate2node {
 	from
 		term: RML!Terminate
 	to
