@@ -1,4 +1,172 @@
-<?xml version="1.0" encoding="ASCII"?>
-<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_lraOEPDFEeixSM42RxhEfQ">
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_lraOEPDFEeixSM42RxhEfQ">
   <imports href="../metamodel/roverml.ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_6_V_0P7pEeiwm6EXfUFRgw" name="Wait_to_terminate">
+    <lhs xmi:id="_7DaAcP7pEeiwm6EXfUFRgw" name="Lhs">
+      <nodes xmi:id="_knRVIP7qEeiwm6EXfUFRgw" outgoing="_oCS1EP7rEeiwm6EXfUFRgw _s_-3EP7rEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverSystem"/>
+      </nodes>
+      <nodes xmi:id="_k-_RkP7qEeiwm6EXfUFRgw" incoming="_6aX1EP7qEeiwm6EXfUFRgw _oCS1EP7rEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//Rover"/>
+      </nodes>
+      <nodes xmi:id="_lV8ZAP7qEeiwm6EXfUFRgw" incoming="_s_-3EP7rEeiwm6EXfUFRgw" outgoing="_6aX1EP7qEeiwm6EXfUFRgw _BgKzEP7rEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverProgram"/>
+      </nodes>
+      <nodes xmi:id="__IQggP7qEeiwm6EXfUFRgw" incoming="_BgKzEP7rEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//Block"/>
+      </nodes>
+      <edges xmi:id="_6aX1EP7qEeiwm6EXfUFRgw" source="_lV8ZAP7qEeiwm6EXfUFRgw" target="_k-_RkP7qEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverProgram/rover"/>
+      </edges>
+      <edges xmi:id="_BgKzEP7rEeiwm6EXfUFRgw" source="_lV8ZAP7qEeiwm6EXfUFRgw" target="__IQggP7qEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverProgram/block"/>
+      </edges>
+      <edges xmi:id="_oCS1EP7rEeiwm6EXfUFRgw" source="_knRVIP7qEeiwm6EXfUFRgw" target="_k-_RkP7qEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverSystem/rovers"/>
+      </edges>
+      <edges xmi:id="_s_-3EP7rEeiwm6EXfUFRgw" source="_knRVIP7qEeiwm6EXfUFRgw" target="_lV8ZAP7qEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverSystem/roverPrograms"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_7DangP7pEeiwm6EXfUFRgw" name="Rhs">
+      <nodes xmi:id="_knRVIf7qEeiwm6EXfUFRgw" outgoing="_oCS1Ef7rEeiwm6EXfUFRgw _s_-3Ef7rEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverSystem"/>
+      </nodes>
+      <nodes xmi:id="_k-_Rkf7qEeiwm6EXfUFRgw" incoming="_6aX1Ef7qEeiwm6EXfUFRgw _oCS1Ef7rEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//Rover"/>
+      </nodes>
+      <nodes xmi:id="_lV9AEP7qEeiwm6EXfUFRgw" incoming="_s_-3Ef7rEeiwm6EXfUFRgw" outgoing="_6aX1Ef7qEeiwm6EXfUFRgw _BgKzEf7rEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverProgram"/>
+      </nodes>
+      <nodes xmi:id="__IQggf7qEeiwm6EXfUFRgw" incoming="_BgKzEf7rEeiwm6EXfUFRgw" outgoing="_64EbcP-fEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//Block"/>
+      </nodes>
+      <nodes xmi:id="_54WD0P-fEeiwm6EXfUFRgw" incoming="_64EbcP-fEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//Terminate"/>
+      </nodes>
+      <edges xmi:id="_6aX1Ef7qEeiwm6EXfUFRgw" source="_lV9AEP7qEeiwm6EXfUFRgw" target="_k-_Rkf7qEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverProgram/rover"/>
+      </edges>
+      <edges xmi:id="_BgKzEf7rEeiwm6EXfUFRgw" source="_lV9AEP7qEeiwm6EXfUFRgw" target="__IQggf7qEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverProgram/block"/>
+      </edges>
+      <edges xmi:id="_oCS1Ef7rEeiwm6EXfUFRgw" source="_knRVIf7qEeiwm6EXfUFRgw" target="_k-_Rkf7qEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverSystem/rovers"/>
+      </edges>
+      <edges xmi:id="_s_-3Ef7rEeiwm6EXfUFRgw" source="_knRVIf7qEeiwm6EXfUFRgw" target="_lV9AEP7qEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//RoverSystem/roverPrograms"/>
+      </edges>
+      <edges xmi:id="_64EbcP-fEeiwm6EXfUFRgw" source="__IQggf7qEeiwm6EXfUFRgw" target="_54WD0P-fEeiwm6EXfUFRgw">
+        <type href="../metamodel/roverml.ecore#//Block/commands"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_knRVIv7qEeiwm6EXfUFRgw" origin="_knRVIP7qEeiwm6EXfUFRgw" image="_knRVIf7qEeiwm6EXfUFRgw"/>
+    <mappings xmi:id="_k-_Rkv7qEeiwm6EXfUFRgw" origin="_k-_RkP7qEeiwm6EXfUFRgw" image="_k-_Rkf7qEeiwm6EXfUFRgw"/>
+    <mappings xmi:id="_lV9AEf7qEeiwm6EXfUFRgw" origin="_lV8ZAP7qEeiwm6EXfUFRgw" image="_lV9AEP7qEeiwm6EXfUFRgw"/>
+    <mappings xmi:id="__IQggv7qEeiwm6EXfUFRgw" origin="__IQggP7qEeiwm6EXfUFRgw" image="__IQggf7qEeiwm6EXfUFRgw"/>
+    <multiRules xmi:id="_jc_UQP-jEeiwm6EXfUFRgw">
+      <lhs xmi:id="_jc_UQf-jEeiwm6EXfUFRgw" name="Lhs">
+        <nodes xmi:id="_jc_US_-jEeiwm6EXfUFRgw" outgoing="_jc_UT_-jEeiwm6EXfUFRgw _jc_UUv-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverSystem"/>
+        </nodes>
+        <nodes xmi:id="_jc_UTf-jEeiwm6EXfUFRgw" incoming="_jc_UT_-jEeiwm6EXfUFRgw _jc_UVf-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Rover"/>
+        </nodes>
+        <nodes xmi:id="_jc_UUP-jEeiwm6EXfUFRgw" incoming="_jc_UUv-jEeiwm6EXfUFRgw" outgoing="_jc_UVf-jEeiwm6EXfUFRgw _jc_UXP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverProgram"/>
+        </nodes>
+        <nodes xmi:id="_jc_UWv-jEeiwm6EXfUFRgw" incoming="_jc_UXP-jEeiwm6EXfUFRgw" outgoing="_kV-KsP-jEeiwm6EXfUFRgw _q6p_sP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Block"/>
+        </nodes>
+        <nodes xmi:id="_jc-tMP-jEeiwm6EXfUFRgw" incoming="_kV-KsP-jEeiwm6EXfUFRgw _rcycYP-jEeiwm6EXfUFRgw" outgoing="_6SnBIP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Wait"/>
+        </nodes>
+        <nodes xmi:id="_qS74YP-jEeiwm6EXfUFRgw" incoming="_q6p_sP-jEeiwm6EXfUFRgw" outgoing="_rcycYP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Transition"/>
+        </nodes>
+        <nodes xmi:id="_5RxPMP-jEeiwm6EXfUFRgw" incoming="_6SnBIP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Time"/>
+        </nodes>
+        <edges xmi:id="_jc_UT_-jEeiwm6EXfUFRgw" source="_jc_US_-jEeiwm6EXfUFRgw" target="_jc_UTf-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverSystem/rovers"/>
+        </edges>
+        <edges xmi:id="_jc_UUv-jEeiwm6EXfUFRgw" source="_jc_US_-jEeiwm6EXfUFRgw" target="_jc_UUP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverSystem/roverPrograms"/>
+        </edges>
+        <edges xmi:id="_jc_UVf-jEeiwm6EXfUFRgw" source="_jc_UUP-jEeiwm6EXfUFRgw" target="_jc_UTf-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverProgram/rover"/>
+        </edges>
+        <edges xmi:id="_jc_UXP-jEeiwm6EXfUFRgw" source="_jc_UUP-jEeiwm6EXfUFRgw" target="_jc_UWv-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverProgram/block"/>
+        </edges>
+        <edges xmi:id="_kV-KsP-jEeiwm6EXfUFRgw" source="_jc_UWv-jEeiwm6EXfUFRgw" target="_jc-tMP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Block/commands"/>
+        </edges>
+        <edges xmi:id="_q6p_sP-jEeiwm6EXfUFRgw" source="_jc_UWv-jEeiwm6EXfUFRgw" target="_qS74YP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Block/transitions"/>
+        </edges>
+        <edges xmi:id="_rcycYP-jEeiwm6EXfUFRgw" source="_qS74YP-jEeiwm6EXfUFRgw" target="_jc-tMP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Transition/target"/>
+        </edges>
+        <edges xmi:id="_6SnBIP-jEeiwm6EXfUFRgw" source="_jc-tMP-jEeiwm6EXfUFRgw" target="_5RxPMP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Wait/duration"/>
+        </edges>
+      </lhs>
+      <rhs xmi:id="_jc_UQv-jEeiwm6EXfUFRgw" name="Rhs">
+        <nodes xmi:id="_jc_UQ_-jEeiwm6EXfUFRgw" outgoing="_jc_UR_-jEeiwm6EXfUFRgw _jc_USv-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverSystem"/>
+        </nodes>
+        <nodes xmi:id="_jc_URf-jEeiwm6EXfUFRgw" incoming="_jc_UR_-jEeiwm6EXfUFRgw _jc_UVP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Rover"/>
+        </nodes>
+        <nodes xmi:id="_jc_USP-jEeiwm6EXfUFRgw" incoming="_jc_USv-jEeiwm6EXfUFRgw" outgoing="_jc_UVP-jEeiwm6EXfUFRgw _jc_UWf-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverProgram"/>
+        </nodes>
+        <nodes xmi:id="_jc_UV_-jEeiwm6EXfUFRgw" incoming="_jc_UWf-jEeiwm6EXfUFRgw" outgoing="_jc_UYP-jEeiwm6EXfUFRgw _q6p_sf-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Block"/>
+        </nodes>
+        <nodes xmi:id="_jc_UXv-jEeiwm6EXfUFRgw" incoming="_jc_UYP-jEeiwm6EXfUFRgw _sWK7cP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Terminate"/>
+        </nodes>
+        <nodes xmi:id="_qS74Yf-jEeiwm6EXfUFRgw" incoming="_q6p_sf-jEeiwm6EXfUFRgw" outgoing="_sWK7cP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Transition"/>
+        </nodes>
+        <edges xmi:id="_jc_UR_-jEeiwm6EXfUFRgw" source="_jc_UQ_-jEeiwm6EXfUFRgw" target="_jc_URf-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverSystem/rovers"/>
+        </edges>
+        <edges xmi:id="_jc_USv-jEeiwm6EXfUFRgw" source="_jc_UQ_-jEeiwm6EXfUFRgw" target="_jc_USP-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverSystem/roverPrograms"/>
+        </edges>
+        <edges xmi:id="_jc_UVP-jEeiwm6EXfUFRgw" source="_jc_USP-jEeiwm6EXfUFRgw" target="_jc_URf-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverProgram/rover"/>
+        </edges>
+        <edges xmi:id="_jc_UWf-jEeiwm6EXfUFRgw" source="_jc_USP-jEeiwm6EXfUFRgw" target="_jc_UV_-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//RoverProgram/block"/>
+        </edges>
+        <edges xmi:id="_jc_UYP-jEeiwm6EXfUFRgw" source="_jc_UV_-jEeiwm6EXfUFRgw" target="_jc_UXv-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Block/commands"/>
+        </edges>
+        <edges xmi:id="_q6p_sf-jEeiwm6EXfUFRgw" source="_jc_UV_-jEeiwm6EXfUFRgw" target="_qS74Yf-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Block/transitions"/>
+        </edges>
+        <edges xmi:id="_sWK7cP-jEeiwm6EXfUFRgw" source="_qS74Yf-jEeiwm6EXfUFRgw" target="_jc_UXv-jEeiwm6EXfUFRgw">
+          <type href="../metamodel/roverml.ecore#//Transition/target"/>
+        </edges>
+      </rhs>
+      <mappings xmi:id="_jc_UU_-jEeiwm6EXfUFRgw" origin="_jc_US_-jEeiwm6EXfUFRgw" image="_jc_UQ_-jEeiwm6EXfUFRgw"/>
+      <mappings xmi:id="_jc_UVv-jEeiwm6EXfUFRgw" origin="_jc_UTf-jEeiwm6EXfUFRgw" image="_jc_URf-jEeiwm6EXfUFRgw"/>
+      <mappings xmi:id="_jc_UXf-jEeiwm6EXfUFRgw" origin="_jc_UUP-jEeiwm6EXfUFRgw" image="_jc_USP-jEeiwm6EXfUFRgw"/>
+      <mappings xmi:id="_jc_UYf-jEeiwm6EXfUFRgw" origin="_jc_UWv-jEeiwm6EXfUFRgw" image="_jc_UV_-jEeiwm6EXfUFRgw"/>
+      <mappings xmi:id="_qS74Yv-jEeiwm6EXfUFRgw" origin="_qS74YP-jEeiwm6EXfUFRgw" image="_qS74Yf-jEeiwm6EXfUFRgw"/>
+      <multiMappings xmi:id="_jc_URP-jEeiwm6EXfUFRgw" origin="_knRVIf7qEeiwm6EXfUFRgw" image="_jc_UQ_-jEeiwm6EXfUFRgw"/>
+      <multiMappings xmi:id="_jc_URv-jEeiwm6EXfUFRgw" origin="_k-_Rkf7qEeiwm6EXfUFRgw" image="_jc_URf-jEeiwm6EXfUFRgw"/>
+      <multiMappings xmi:id="_jc_USf-jEeiwm6EXfUFRgw" origin="_lV9AEP7qEeiwm6EXfUFRgw" image="_jc_USP-jEeiwm6EXfUFRgw"/>
+      <multiMappings xmi:id="_jc_UTP-jEeiwm6EXfUFRgw" origin="_knRVIP7qEeiwm6EXfUFRgw" image="_jc_US_-jEeiwm6EXfUFRgw"/>
+      <multiMappings xmi:id="_jc_UTv-jEeiwm6EXfUFRgw" origin="_k-_RkP7qEeiwm6EXfUFRgw" image="_jc_UTf-jEeiwm6EXfUFRgw"/>
+      <multiMappings xmi:id="_jc_UUf-jEeiwm6EXfUFRgw" origin="_lV8ZAP7qEeiwm6EXfUFRgw" image="_jc_UUP-jEeiwm6EXfUFRgw"/>
+      <multiMappings xmi:id="_jc_UWP-jEeiwm6EXfUFRgw" origin="__IQggf7qEeiwm6EXfUFRgw" image="_jc_UV_-jEeiwm6EXfUFRgw"/>
+      <multiMappings xmi:id="_jc_UW_-jEeiwm6EXfUFRgw" origin="__IQggP7qEeiwm6EXfUFRgw" image="_jc_UWv-jEeiwm6EXfUFRgw"/>
+      <multiMappings xmi:id="_jc_UX_-jEeiwm6EXfUFRgw" origin="_54WD0P-fEeiwm6EXfUFRgw" image="_jc_UXv-jEeiwm6EXfUFRgw"/>
+    </multiRules>
+  </units>
 </henshin:Module>

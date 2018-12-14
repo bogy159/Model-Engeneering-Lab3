@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<at.ac.tuwien.big.roverml:RoverSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:at.ac.tuwien.big.roverml="http://www.big.tuwien.ac.at/roverml" xsi:schemaLocation="http://www.big.tuwien.ac.at/roverml ../metamodel/roverml.ecore">
+  <rovers name="CAT">
+    <components xsi:type="at.ac.tuwien.big.roverml:Motor" name="mainMotor" kind="Diesel"/>
+    <components xsi:type="at.ac.tuwien.big.roverml:Light" name="FrontLight" kind="LED"/>
+    <components xsi:type="at.ac.tuwien.big.roverml:GPS" name="SensorGPS"/>
+  </rovers>
+  <roverPrograms name="Moon" rover="//@rovers.0">
+    <block>
+      <commands xsi:type="at.ac.tuwien.big.roverml:Rotate" name="r">
+        <angle value="90.0" angleUnit="degree"/>
+      </commands>
+      <commands xsi:type="at.ac.tuwien.big.roverml:SetLightColor" name="set red" color="red" lights="//@rovers.0/@components.1"/>
+      <commands xsi:type="at.ac.tuwien.big.roverml:Move" name="m">
+        <speed value="5.0"/>
+        <distance value="50.0"/>
+      </commands>
+      <commands xsi:type="at.ac.tuwien.big.roverml:Terminate"/>
+      <transitions name="t1" source="//@roverPrograms.0/@block/@commands.0" target="//@roverPrograms.0/@block/@commands.3"/>
+      <transitions xsi:type="at.ac.tuwien.big.roverml:GpsTrigger" name="t1'" source="//@roverPrograms.0/@block/@commands.0" target="//@roverPrograms.0/@block/@commands.3" sensor="//@rovers.0/@components.2"/>
+      <transitions xsi:type="at.ac.tuwien.big.roverml:GpsTrigger" name="t2" source="//@roverPrograms.0/@block/@commands.0" target="//@roverPrograms.0/@block/@commands.2" sensor="//@rovers.0/@components.2">
+        <comparisonValue xsi:type="at.ac.tuwien.big.roverml:Position">
+          <x value="10.0"/>
+          <y value="5.0"/>
+        </comparisonValue>
+      </transitions>
+      <transitions xsi:type="at.ac.tuwien.big.roverml:GpsTrigger" name="t3" source="//@roverPrograms.0/@block/@commands.0" target="//@roverPrograms.0/@block/@commands.1" sensor="//@rovers.0/@components.2">
+        <comparisonValue xsi:type="at.ac.tuwien.big.roverml:Position">
+          <x value="20.0"/>
+          <y value="5.0"/>
+        </comparisonValue>
+      </transitions>
+    </block>
+  </roverPrograms>
+</at.ac.tuwien.big.roverml:RoverSystem>
