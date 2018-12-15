@@ -6,7 +6,7 @@
 module RoverML2UML;
 create OUT: UML from IN: RML, P: Profile;
 
-helper def: getStereotype(name: String): UML!Profile = Profile!Stereotype.allInstances() -> any(x | x.name = name);
+helper def: getStereotype(name: String): UML!Stereotype = Profile!Stereotype.allInstances() -> any(x | x.name = name);
 
 rule system2package {
 	from
@@ -70,7 +70,6 @@ rule block2structuredActivityNode {
 	to
 		node: UML!StructuredActivityNode (
 			
-			-- TODO nodes -> commands and edges -> transitions
 			node <- block.commands,
 			edge <- block.transitions
 		)
@@ -103,7 +102,7 @@ rule transition2controlFlow {
 	}
 }
 
-rule command2opaqueAction {
+abstract rule command2opaqueAction {
 	from
 		com: RML!Command(not com.oclIsTypeOf(RML!Repeat) and not com.oclIsTypeOf(RML!Terminate))
 	to
@@ -111,29 +110,43 @@ rule command2opaqueAction {
 			name <- com.name	
 			
 		)
-		do {
-			if (com.oclIsTypeOf(RML!Wait)) {
-				
-				action.applyStereotype(thisModule.getStereotype('Wait'));
-				action.setValue(thisModule.getStereotype('Wait'), 'duration', com.duration.value);			
-			}
-			if (com.oclIsTypeOf(RML!Move)) {
-				
-				action.applyStereotype(thisModule.getStereotype('Move'));
-				action.setValue(thisModule.getStereotype('Move'), 'speed', com.speed.value);	
-				action.setValue(thisModule.getStereotype('Move'), 'distance', com.distance.value);
-			}
-			if (com.oclIsTypeOf(RML!SetLightColor)) {
-				
-				action.applyStereotype(thisModule.getStereotype('SetLightColor'));
-				action.setValue(thisModule.getStereotype('SetLightColor'), 'color', com.color.toString());			
-			}
-			if (com.oclIsTypeOf(RML!Rotate)) {
-				
-				action.applyStereotype(thisModule.getStereotype('Rotate'));
-				action.setValue(thisModule.getStereotype('Rotate'), 'angle', com.angle.value);			
-			}
-			
+}
+
+rule move2opaqueAction extends command2opaqueAction {
+	from
+		com: RML!Move
+	do {
+		action.applyStereotype(thisModule.getStereotype('Move'));
+		action.setValue(action.getAppliedStereotypes() -> first(), 'speed', com.speed.value);
+		action.setValue(action.getAppliedStereotypes() -> first(), 'distance', com.distance.value);
+	}
+}
+
+rule rotate2opaqueAction extends command2opaqueAction {
+	from
+		com: RML!Rotate
+	do {
+		action.applyStereotype(thisModule.getStereotype('Rotate'));
+		action.setValue(action.getAppliedStereotypes() -> first(), 'angle', com.angle.value);
+	}
+}
+
+rule wait2opaqueAction extends command2opaqueAction {
+	from
+		com: RML!Wait
+	do {
+		action.applyStereotype(thisModule.getStereotype('Wait'));
+		action.setValue(action.getAppliedStereotypes() -> first(), 'duration', com.duration.value);
+	}
+}
+
+rule setLightColor2opaqueAction extends command2opaqueAction {
+	from
+		com: RML!SetLightColor
+	do {
+		action.applyStereotype(thisModule.getStereotype('SetLightColor'));
+		action.setValue(action.getAppliedStereotypes() -> first(), 'color', com.color.toString());
+		action.setValue(action.getAppliedStereotypes() -> first(), 'lights', com.lights.toString());
 	}
 }
 
@@ -145,16 +158,5 @@ rule terminate2node {
 	do {
 		
 		node.applyStereotype(thisModule.getStereotype('Terminate'));
-	}
-}
-
-rule genAttribute(name: String, value: String) {
-	to
-		att: AML!Attribute (
-			name <- name,
-			value <- value
-		)
-	do {
-		att; 
 	}
 }
