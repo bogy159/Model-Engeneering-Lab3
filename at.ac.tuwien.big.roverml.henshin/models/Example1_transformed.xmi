@@ -7,6 +7,9 @@
   </rovers>
   <roverPrograms name="Moon" rover="//@rovers.0">
     <block>
+      <commands xsi:type="at.ac.tuwien.big.roverml:Wait" name="w">
+        <duration value="5.0"/>
+      </commands>
       <commands xsi:type="at.ac.tuwien.big.roverml:Rotate" name="r">
         <angle value="90.0" angleUnit="degree"/>
       </commands>
@@ -15,25 +18,19 @@
         <speed value="5.0"/>
         <distance value="50.0"/>
       </commands>
-      <commands xsi:type="at.ac.tuwien.big.roverml:Terminate"/>
-      <commands xsi:type="at.ac.tuwien.big.roverml:Wait">
-        <duration value="1.0"/>
-      </commands>
-      <transitions name="t1" source="//@roverPrograms.0/@block/@commands.4" target="//@roverPrograms.0/@block/@commands.3"/>
-      <transitions xsi:type="at.ac.tuwien.big.roverml:GpsTrigger" name="t1'" source="//@roverPrograms.0/@block/@commands.4" target="//@roverPrograms.0/@block/@commands.3" sensor="//@rovers.0/@components.2"/>
-      <transitions xsi:type="at.ac.tuwien.big.roverml:GpsTrigger" name="t2" source="//@roverPrograms.0/@block/@commands.4" target="//@roverPrograms.0/@block/@commands.2" sensor="//@rovers.0/@components.2">
+      <transitions xsi:type="at.ac.tuwien.big.roverml:GpsTrigger" name="t1'" source="//@roverPrograms.0/@block/@commands.1" target="//@roverPrograms.0/@block/@commands.0" sensor="//@rovers.0/@components.2"/>
+      <transitions xsi:type="at.ac.tuwien.big.roverml:GpsTrigger" name="t2" source="//@roverPrograms.0/@block/@commands.1" target="//@roverPrograms.0/@block/@commands.3" sensor="//@rovers.0/@components.2">
         <comparisonValue xsi:type="at.ac.tuwien.big.roverml:Position">
           <x value="10.0"/>
           <y value="5.0"/>
         </comparisonValue>
       </transitions>
-      <transitions xsi:type="at.ac.tuwien.big.roverml:GpsTrigger" name="t3" source="//@roverPrograms.0/@block/@commands.0" target="//@roverPrograms.0/@block/@commands.1" sensor="//@rovers.0/@components.2">
+      <transitions xsi:type="at.ac.tuwien.big.roverml:GpsTrigger" name="t3" source="//@roverPrograms.0/@block/@commands.1" target="//@roverPrograms.0/@block/@commands.2" sensor="//@rovers.0/@components.2">
         <comparisonValue xsi:type="at.ac.tuwien.big.roverml:Position">
           <x value="20.0"/>
           <y value="5.0"/>
         </comparisonValue>
       </transitions>
-      <transitions source="//@roverPrograms.0/@block/@commands.0" target="//@roverPrograms.0/@block/@commands.4"/>
     </block>
   </roverPrograms>
 </at.ac.tuwien.big.roverml:RoverSystem>
